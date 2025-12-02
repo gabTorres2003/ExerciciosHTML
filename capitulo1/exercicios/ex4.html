@@ -1,11 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercício 4</title>
+  </head>
+  <body>
+    <h1>Plataforma de pedidos Online</h1>
+    <section class="info-cliente">
+      <p>Preencha as informações sobre o cliente:</p>
+      <form
+        action="https://postman-echo.com/post"
+        method="post"
+        enctype="multipart/form-data"
+      >
+        <fieldset>
+          <legend>Informações do Cliente:</legend>
+          <label for="nome">Nome completo:</label>
+          <input
+            id="nome"
+            type="text"
+            placeholder="Ex: João da Silva"
+            autocomplete="name"
+            spellcheck="true"
+            required
+          />
+          <br/>
+          <label for="email">Email:</label>
+          <input
+            id="email"
+            type="email"
+            placeholder="joaosilva@gmail.com"
+            autocomplete="email"
+            required
+          />
+          <br />
+          <label for="telefone">Telefone</label>
+          <input id="telefone" type="tel" title="O número deve estar no seguinte
+          padrão: (XX)XXXXX-XXXX" pattern="\(\d{2}\) \d{5}-\d{4}"
+          placeholder="(99) 99999-9999" title=/>
+          <br />
+          <label for="senha">Senha:</label>
+          <input
+            id="senha"
+            type="password"
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+            title="Mínimo de 8 caracteres, com pelo menos uma letra maiúscula, uma minúscula e um dígito."
+          />
+          <br />
+        </fieldset>
+      </form>
+    </section>
+    <section class="info-pedido">
+      <p>Preencha as informações sobre o pedido:</p>
+      <form action="https://postman-echo.com/post" method="post">
+        <fieldset>
+          <legend>Detalhes do pedido:</legend>
+          <label for="cor">Cor de preferência</label>
+          <input type="color" />
+          <br />
+          <label for="data-hora">Data e hora da entrega</label>
+          <input
+            type="date"
+            title="Disponível entre 01/01/2026 e 31/12/2026"
+            min="01/01/2026"
+            max="31/12/2026"
+          />
+          <br />
+          <label for="itens">Quantidade de itens</label>
+          <input type="range" min="1" max="10" value="5" />
+          <br>
+          <label for="produto">Produto</label>
+          <input type="text" list="lista-produtos" />
+          <datalist id="lista-produtos">
+            <option value="produto">Laptop Pro</option>
+            <option value="produto">Tablet Slim</option>
+            <option value="produto">Smartwatch X</option>
+          </datalist>
+        </fieldset>
+      </form>
+    </section>
+    <p>Preencha as informações sobre o envio:</p>
+    <section class="opcoes-envio">
+      <form action="https://postman-echo.com/post" method="post">
+        <fieldset>
+          <legend>Opções de Envio</legend>
+          <input
+            type="radio"
+            id="opção2"
+            name="opcoes"
+            value="valor2"
+            checked
+          />
+          <label for="opção2">Envio normal</label><br />
+          <input type="radio" id="opção1" name="opcoes" value="valor1" />
+          <label for="opção1">Envio Expresso</label><br />
+        </fieldset>
+      </form>
+    </section>
+    <section class="termo">
+        <p>Concorde com o termo</p>
+        <fieldset>
+            <legend>Termo de Serviço</legend>
+            <label for="termo">Eu concordo com o termo de serviços</label>
+            <input type="checkbox" name="termo" id="termo" required>
+            <br>
+        </fieldset>
+    </section>
+    <br>
+    <input type="submit" value="Enviar">
+  </body>
 </html>
